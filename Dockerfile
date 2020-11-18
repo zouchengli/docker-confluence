@@ -1,11 +1,11 @@
 FROM openjdk:8-stretch
 
-LABEL maintainer="chengli.zou <chengli.zou@gmail.com>" version="7.3.1"
+LABEL maintainer="chengli.zou <chengli.zou@gmail.com>" version="7.9.0"
 
 ARG ATLASSIAN_PRODUCTION=confluence
 ARG APP_NAME=confluence
-ARG APP_VERSION=7.3.1
-ARG AGENT_VERSION=1.2.2
+ARG APP_VERSION=7.9.0
+ARG AGENT_VERSION=1.2.3
 ARG MYSQL_DRIVER_VERSION=5.1.48
 
 ENV CONFLUENCE_HOME=/var/confluence \
