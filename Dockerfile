@@ -2,7 +2,6 @@ FROM openjdk:8-stretch
 
 LABEL maintainer="chengli.zou <chengli.zou@gmail.com>" version="7.9.0"
 
-ARG ATLASSIAN_PRODUCTION=confluence
 ARG APP_NAME=confluence
 ARG APP_VERSION=7.9.0
 ARG AGENT_VERSION=1.2.3
@@ -24,7 +23,7 @@ RUN mkdir -p ${CONFLUENCE_INSTALL} ${CONFLUENCE_HOME} ${AGENT_PATH} \
 && tar xzf /tmp/atlassian.tar.gz -C /opt/confluence/ --strip-components 1 \
 && rm -f /tmp/atlassian.tar.gz \
 && curl -o /opt/confluence/lib/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/${MYSQL_DRIVER_VERSION}/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar -L \
-&& echo "confluence.home = ${CONFLUENCE_HOME}" > ${CONFLUENCE_INSTALL}/${ATLASSIAN_PRODUCTION}/WEB-INF/classes/confluence-init.properties
+&& echo "confluence.home = ${CONFLUENCE_HOME}" > ${CONFLUENCE_INSTALL}/${APP_NAME}/WEB-INF/classes/confluence-init.properties
 
 WORKDIR $CONFLUENCE_INSTALL
 EXPOSE 8080

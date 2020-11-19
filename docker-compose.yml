@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   confluence:
-    image: zouchengli/confluence
+    image: zouchengli/confluence:crack
     container_name: confluence-srv
     environment:
       - TZ='Asia/Shanghai'
