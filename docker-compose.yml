@@ -13,7 +13,7 @@ services:
     ports:
       - "8090:8090"
     volumes:
-      - confluence_conf:/var/confluence
+      - home_data:/var/confluence
     restart: always
     networks:
       - network-bridge
@@ -31,7 +31,7 @@ services:
     ports:
       - "13306:3306"
     volumes:
-      - ./mysql:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
     restart: always
     networks:
       - network-bridge
@@ -39,3 +39,8 @@ services:
 networks:
   network-bridge:
     driver: bridge
+volumes:
+  home_data:
+    external: false
+  mysql_data:
+    external: false
