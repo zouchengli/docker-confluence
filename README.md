@@ -23,5 +23,5 @@ default port: 8090
 - start confluence
 
 ```
-    docker run -p 8090:8090 -v ./confluence:/var/confluence --name confluence-srv -e TZ='Asia/Shanghai' zouchengli/confluence
+    docker run -p 8090:8090 -v confluence_conf:/var/confluence --name confluence-srv -e TZ='Asia/Shanghai' zouchengli/confluence
 ```
